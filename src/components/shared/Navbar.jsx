@@ -16,11 +16,11 @@ const Navbar = () => {
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-[#09A1A1] shadow-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                     </div>
                     <ul
                         tabIndex="-1"
@@ -28,30 +28,46 @@ const Navbar = () => {
                         <li><NavLink href={'/'}>Home</NavLink></li>
                         <li><NavLink href={'/about'}>About</NavLink></li>
                         <li><NavLink href={'/career'}>Career</NavLink></li>
+                        <li>
+                            {isPending ? (<span className="loading loading-spinner loading-lg"></span>) : user ? (<div className='flex flex-col items-center gap-2'>
+                                <h2>Hello, {user.name}</h2>
+                                <Image src={user.image || userAvatar} alt="User Avatar" width={60} height={60}></Image>
+                                <button className='btn mr-4 bg-red-500 text-white' onClick={async () => await authClient.signOut()}>Logout</button>
+                            </div>) :
+                                (
+                                    <div className='flex flex-col'>
+                                        <Link href={'/register'}><button className='btn mr-4 bg-blue-500 text-white'>Register</button></Link>
+                                        <Link href={'/login'}><button className='btn mr-4 bg-green-500 text-white'>Login</button></Link>
+                                        <button className='btn border-blue-500 text-blue-500' onClick={handleGoogleSignIn}><FaGoogle /> Login with Google</button>
+                                    </div>
+                                )}
+                        </li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">SunCart</a>
+                <a className="btn btn-ghost text-xl text-white">SunCart</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><NavLink href={'/'}>Home</NavLink></li>
-                    <li><NavLink href={'/about'}>About</NavLink></li>
-                    <li><NavLink href={'/career'}>Career</NavLink></li>
+                    <li className='text-white'><NavLink href={'/'}>Home</NavLink></li>
+                    <li className='text-white'><NavLink href={'/about'}>About</NavLink></li>
+                    <li className='text-white'><NavLink href={'/career'}>Career</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end">
-                {isPending ? (<span className="loading loading-spinner loading-lg"></span>) : user ? (<div className='flex items-center gap-2'>
-                    <h2>Hello, {user.name}</h2>
-                    <Image src={user.image || userAvatar} alt="User Avatar" width={60} height={60}></Image>
-                    <button className='btn mr-4 bg-red-500 text-white' onClick={async () => await authClient.signOut()}>Logout</button>
-                </div>) :
-                    (
-                        <div className='flex'>
-                            <Link href={'/register'}><button className='btn mr-4 bg-blue-500 text-white'>Register</button></Link>
-                            <Link href={'/login'}><button className='btn mr-4 bg-green-500 text-white'>Login</button></Link>
-                            <button className='btn border-blue-500 text-blue-500' onClick={handleGoogleSignIn}><FaGoogle /> Login with Google</button>
-                        </div>
-                    )}
+                <div className='hidden md:block'>
+                    {isPending ? (<span className="loading loading-spinner loading-lg"></span>) : user ? (<div className='flex items-center gap-2'>
+                        <h2>Hello, {user.name}</h2>
+                        <Image src={user.image || userAvatar} alt="User Avatar" width={60} height={60}></Image>
+                        <button className='btn mr-4 bg-red-500 text-white' onClick={async () => await authClient.signOut()}>Logout</button>
+                    </div>) :
+                        (
+                            <div className='flex'>
+                                <Link href={'/register'}><button className='btn mr-4 bg-blue-500 text-white'>Register</button></Link>
+                                <Link href={'/login'}><button className='btn mr-4 bg-green-500 text-white'>Login</button></Link>
+                                <button className='btn border-blue-500 text-blue-500' onClick={handleGoogleSignIn}><FaGoogle /> Login with Google</button>
+                            </div>
+                        )}
+                </div>
             </div>
         </div>
     );

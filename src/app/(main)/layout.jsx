@@ -4,7 +4,7 @@ const MainLayout = ({children}) => {
     return (
         <>
             <Navbar></Navbar>
-            <main>{children}</main>
+            <main className="bg-[#F3E308]">{children}</main>
         </>
     );
 };

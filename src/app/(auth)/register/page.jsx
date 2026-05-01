@@ -49,8 +49,8 @@ const RegisterPage = () => {
     // Then use name="email" or name ="password".
 
     return (
-        <div className="container mx-auto min-h-[80vh] flex justify-center items-center bg-slate-100">
-            <div className="p-4 rounded-xl bg-white">
+        <div className="container mx-auto min-h-[80vh] flex justify-center items-center bg-[#F6C992]">
+            <div className="p-4 rounded-xl bg-[#F3E308]">
                 <h2 className="font-bold text-3xl text-center mb-6">Register your Account</h2>
                 <form className="space-y-4" onSubmit={handleSubmit(handleRegisterFunc)}>
                     <fieldset className="fieldset">
