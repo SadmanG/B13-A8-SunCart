@@ -24,5 +24,5 @@ export async function proxy(request) {
 // export default function proxy(request) { ... }
 
 export const config = {
-    matcher: ['/myprofile', '/news/:path*'],
+    matcher: ['/myprofile', '/1', '/2', '/3', '/4', '/5', '/6'],
 }
