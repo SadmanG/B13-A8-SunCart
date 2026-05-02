@@ -49,7 +49,7 @@ const RegisterPage = () => {
     // Then use name="email" or name ="password".
 
     return (
-        <div className="container mx-auto min-h-[80vh] flex justify-center items-center bg-[#F6C992]">
+        <div className="container mx-auto min-h-[80vh] flex justify-center items-center bg-[#F6C992] p-8">
             <div className="p-4 rounded-xl bg-[#F3E308]">
                 <h2 className="font-bold text-3xl text-center mb-6">Register your Account</h2>
                 <form className="space-y-4" onSubmit={handleSubmit(handleRegisterFunc)}>
@@ -79,7 +79,7 @@ const RegisterPage = () => {
                         >{isShowPassword ? <FaEye /> : <FaEyeSlash />}</span>
                         {errors.password && <p className="text-red-600">{errors.password.message}</p>}
                     </fieldset>
-                    <button className="btn w-full bg-slate-800 text-white">Register</button>
+                    <button className="btn w-full bg-blue-500 border-black text-white">Register</button>
                 </form>
                 <p className="mt-6">Already have an account? <Link href={"/login"} className="text-green-600">Login Now</Link></p>
             </div>

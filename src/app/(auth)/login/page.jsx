@@ -65,7 +65,7 @@ const LoginPage = () => {
                         >{isShowPassword ? <FaEye/> : <FaEyeSlash/>}</span>
                         {errors.password && <p className="text-red-600">{errors.password.message}</p>}
                     </fieldset>
-                    <button className="btn w-full bg-slate-800 text-white">Login</button>
+                    <button className="btn w-full bg-green-500 border-black text-white">Login</button>
                 </form>
                 <p className="mt-6">Don&apos;t have an account? <Link href={"/register"} className="text-blue-600">Register Now</Link></p>
             </div>
