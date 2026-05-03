@@ -1,4 +1,5 @@
 'use client'
+import 'animate.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -45,13 +46,13 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl text-white flex"><CiSun className='text-2xl'/>SunCart</a>
+                <a className="btn btn-ghost text-xl text-white flex animate__animated animate__bounce"><CiSun className='text-2xl'/>SunCart</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li className='text-white'><NavLink href={'/'}>Home</NavLink></li>
-                    <li className='text-white'><NavLink href={'/products'}>Products</NavLink></li>
-                    <li className='text-white'><NavLink href={'/myprofile'}>My Profile</NavLink></li>
+                    <li className='text-white animate__animated animate__bounce'><NavLink href={'/'}>Home</NavLink></li>
+                    <li className='text-white animate__animated animate__bounce'><NavLink href={'/products'}>Products</NavLink></li>
+                    <li className='text-white animate__animated animate__bounce'><NavLink href={'/myprofile'}>My Profile</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end">

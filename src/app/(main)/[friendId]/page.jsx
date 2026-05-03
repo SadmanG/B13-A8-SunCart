@@ -45,7 +45,7 @@ const ProductDetails = async ({ params }) => {
           <p className="pb-6 text-xl flex gap-2 items-center">
             Rating: {product.rating} <span className='text-yellow-500'><FaStar /></span>
           </p>
-          <button className="btn btn-info">Buy Now</button>
+          <button className="btn btn-info text-white">Buy Now</button>
         </div>
       </div>
     </div>

@@ -20,9 +20,9 @@ const MyProfilePage = () => {
                     />
                 </div>
                 <div>
-                    <h1 className="text-5xl font-bold">UserName: {user.name}</h1>
+                    <h1 className="text-5xl font-bold pb-6">UserName: {user.name}</h1>
                     <button className='btn mr-4 bg-red-500 text-white' onClick={async () => await authClient.signOut()}>Logout</button>
-                    <button className="btn btn-info">Update Information</button>
+                    <button className="btn btn-info text-white">Update Information</button>
                 </div>
             </div>) :
                 (
