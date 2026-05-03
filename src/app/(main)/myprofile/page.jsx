@@ -22,13 +22,12 @@ const MyProfilePage = () => {
                 <div>
                     <h1 className="text-5xl font-bold pb-6">UserName: {user.name}</h1>
                     <button className='btn mr-4 bg-red-500 text-white' onClick={async () => await authClient.signOut()}>Logout</button>
-                    <button className="btn btn-info text-white">Update Information</button>
+                    <Link href={"/update"}><button className="btn bg-orange-600 text-white">Update Profile</button></Link>
                 </div>
             </div>) :
                 (
                     <div className='flex flex-col'>
-                        <Link href={'/register'}><button className='btn mr-4 bg-blue-500 text-white'>Register</button></Link>
-                        <Link href={'/login'}><button className='btn mr-4 bg-green-500 text-white'>Login</button></Link>
+                        <h2 className="text-5xl">You are now Logged Out!</h2>
                     </div>
                 )}
         </div>

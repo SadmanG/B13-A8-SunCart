@@ -22,7 +22,7 @@ const RegisterPage = () => {
     const handleRegisterFunc = async (data) => {
         // console.log(data);
         const { name, photo, email, password } = data;
-        console.log(name, photo, email, password);
+        // console.log(name, photo, email, password);
 
         const { data: res, error } = await authClient.signUp.email({
             name: name, // required
