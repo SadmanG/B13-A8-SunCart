@@ -58,7 +58,7 @@ const UpdatePage = () => {
                             {...register("photo", { required: "Enter Your Photo URL!" })} />
                         {errors.photo && <p className="text-red-600">{errors.photo.message}</p>}
                     </fieldset>
-                    <button className="btn w-full bg-orange-600 border-black text-white">Update Now</button>
+                    <button className="btn w-full btn-info border-black text-white">Update Now</button>
                 </form>
                 <p className="mt-6">Don&apos;t want to update your profile? <Link href={"/myprofile"} className="text-red-600">Go Back</Link></p>
             </div>

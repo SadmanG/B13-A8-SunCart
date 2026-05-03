@@ -22,7 +22,7 @@ const MyProfilePage = () => {
                 <div>
                     <h1 className="text-5xl font-bold pb-6">UserName: {user.name}</h1>
                     <button className='btn mr-4 bg-red-500 text-white' onClick={async () => await authClient.signOut()}>Logout</button>
-                    <Link href={"/update"}><button className="btn bg-orange-600 text-white">Update Profile</button></Link>
+                    <Link href={"/update"}><button className="btn btn-info text-white">Update Profile</button></Link>
                 </div>
             </div>) :
                 (

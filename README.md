@@ -16,7 +16,7 @@ https://b13-a8-sun-cart-flax.vercel.app
 
 2) Users can see the Products in HomePage. But they can see the details and place order, only after they have registered and logged in. (Done through Authentication using Better Auth.)
 
-3) After logging in, the users can go to "My Profile" page to see their profile.
+3) After logging in, the users can go to "My Profile" page to see their profile. Then, if they want, they can change their UserName and Profile Picture.
 
 4) A responsive Footer for the users to view, to find our developers on social media or contact them directly.
 
