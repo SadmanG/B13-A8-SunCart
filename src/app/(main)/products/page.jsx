@@ -40,7 +40,7 @@ const ProductsPage = () => {
                                     <h2 className="card-title text-2xl">{product.name}</h2>
                                     <p>{product.description}</p>
                                     <p className="text-xl flex gap-2 items-center">
-                                        Rating: {product.rating} <FaStar />
+                                        Rating: {product.rating} <span className='text-yellow-400'><FaStar /></span>
                                     </p>
                                     <p className='text-xl'>Price: {product.price} $</p>
                                     <div className="card-actions justify-end">

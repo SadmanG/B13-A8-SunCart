@@ -33,6 +33,9 @@ const ProductDetails = async ({ params }) => {
         <div>
           <h1 className="text-5xl font-bold">{product.name}</h1>
           <h1 className="pt-6 text-2xl font-bold">Brand: {product.brand}</h1>
+          <p className="pt-6 text-xl">
+            Category: {product.category}
+          </p>
           <p className="py-6">
             Description: {product.description}
           </p>
@@ -40,7 +43,7 @@ const ProductDetails = async ({ params }) => {
             Price: {product.price} $
           </p>
           <p className="pb-6 text-xl flex gap-2 items-center">
-            Rating: {product.rating} <FaStar />
+            Rating: {product.rating} <span className='text-yellow-500'><FaStar /></span>
           </p>
           <button className="btn btn-info">Buy Now</button>
         </div>
